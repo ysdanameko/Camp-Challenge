@@ -1,0 +1,6 @@
+自分のパソコンのスペック
+
+OS:X El Capitan
+CPU:Intel Corei7-4870HQ（ベンチマークスコア9,274）
+メモリ:16GB 1600MHz DDR3
+ハードディスク:500GB
