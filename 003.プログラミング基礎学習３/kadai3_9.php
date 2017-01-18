@@ -32,14 +32,7 @@ foreach ($all as $key => $value) {//$allを分解したよ
 }
 
 
-// foreach ($value as $key => $value2){
-//
-//        if($key == $name){
-//                     echo $key.':'.$value."<br>";
-//         }elseif($key == $birth){
-//           echo $key.':'.$value.'<br>';
-//         }else {
-//           continue;
-//         }
-//   }
-//3人分のプロフィールについてIDと住所以外を表示する処理を実行する。2重のforeachとcontinueを必ず用いること
+
+/*
+3人分のプロフィールについてIDと住所以外を表示する処理を実行する。
+2重のforeachとcontinueを必ず用いること
