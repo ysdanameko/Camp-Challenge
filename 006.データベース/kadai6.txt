@@ -1,0 +1,77 @@
+create table challenge_db.profiles //テーブル作成
+(profilesID int, name varchar(255), tell varchar(255), age int, birthday date);
+
+
+INSERT INTO profiles ////インサート　テーブルにレコード（行）を追加する
+values(1,'田中 実','012-345-6789','30','1994-02-01');
+INSERT INTO profiles
+values(2,'鈴木 茂','090-1122-3344','37','1987-08-12');
+INSERT INTO profiles
+values(3,'鈴木 実','080-5566-7788','24','2000-12-24');
+INSERT INTO profiles
+values(4,'佐藤 清','012-0987-6543','19','2005-08-01');
+INSERT INTO profiles
+values(5,'高橋 清’,'090-9900-1234','24','2000-12-24');
+
+select * from profiles; //全要素を表示
+
+//profilesIDが3のレコードのみを検索して表示
+select * from profiles
+WHERE profilesID = 3;
+
+ //nameが「高橋 清」のみのレコードを検索して表示
+select * from profiles
+WHERE name = '高橋 清';
+
+//ageが「24」のみのレコードを検索して表示
+select * from profiles
+WHERE age = '24';
+
+//ageが「25」以上のレコードを検索して表示
+select * from profiles
+    -> where age >= 25;
+
+//nameに「実」が含まれているレコードを表示
+select * from profiles
+where name LIKE '%実%';
+
+//profilesIDが2のnameを「吉田 茂」に更新する。この1件をSELECTして表示する。
+UPDATE profiles set name = '吉田 茂' 
+where profilesID = 2;
+
+
+select * from profiles where profilesID = 2;
+
+//birthdayが2000-12-24のレコードを削除する。SELECT*で表示する
+DELETE from profiles
+WHERE birthday = '2000-12-24';
+select * from profiles;
+
+//課題9
+
+ create table challenge_user
+(profilesID int,  name varchar(255), tell varchar(255), age int, birthday date,depertmentID int, stationID int);
+INSERT INTO challenge_user value(1,'田中 実','012-345-6789','30','1994-02-01','3','1');
+INSERT INTO challenge_user value(2,'鈴木 茂','090-1122-3344','37','1987-08-12','3','4');
+INSERT INTO challenge_user value(3,'鈴木 実','080-5566-7788', '24','2000-12-24','2','5');
+INSERT INTO challenge_user value(4,'佐藤 清','012-0987-6543','19','2005-08-01','1','5');
+INSERT INTO challenge_user value(5,'高橋 清','090-9900-1234','24','2000-12-24','3','5');
+select * from challenge_user;
+
+create table challenge_db.depertment(depertmentID int, depertmentName varchar(255));
+INSERT INTO challenge_db.depertment
+value(1,'開発部');
+INSERT INTO challenge_db.depertment
+value(2,'営業部');
+INSERT INTO challenge_db.depertment
+value(3,'総務部');
+select * from challenge_db.depertment;
+
+create table challenge_db.station
+(stationID int, stationName varchar(255));
+ INSERT INTO challenge_db.station value(1,'九段下');
+INSERT INTO challenge_db.station value(2,'永田町');
+INSERT INTO challenge_db.station value(3,'渋谷');
+INSERT INTO challenge_db.station value(4,'神保町');
+INSERT INTO challenge_db.station value(5,'上井草');
+mysql> select * from challenge_db.station;
