@@ -29,9 +29,9 @@ if(!empty($_POST['name']) && !empty($_POST['tell']) && !empty($_POST['birthday']
 }
 
 //表示
-$sql = "SELECT * FROM profiles"; //全部出したよ
-$query = $pdo -> prepare($sql); //あってるか確認するわー、あってたわー
-$query -> execute();//じゃあいってくるねー（実行）送るねー
+$sql = "SELECT * FROM profiles"; //作った
+$query = $pdo -> prepare($sql); //PDOに知らせる
+$query -> execute();//PDOがサーバーに送った、結果きた
 $result = $query -> fetchall(PDO::FETCH_ASSOC);//はい結果
 
 }catch(PDOException $Exception){
